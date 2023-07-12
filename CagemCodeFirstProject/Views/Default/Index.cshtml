@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+
+<!--
+   Author: W3layouts
+   Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+@Html.Action("PartialHead")
+<body id="home">
+    @Html.Action("PartialNavbar")
+    @Html.Action("PartialSliderScript")
+
+    <!--//MENU-JS-->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+    <!--theme switcher dark and light mode script-->
+    <script>
+        const bodyElement = document.querySelector('body');
+        const themeToggle = document.querySelector('#themeToggle');
+        const darkModeMql = window.matchMedia('(prefers-color-scheme: dark)');
+
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : userPreference(darkModeMql);
+
+        if (currentTheme) {
+            bodyElement.classList.add(currentTheme);
+
+            if (currentTheme === 'dark') {
+                themeToggle.checked = true;
+            }
+        }
+
+        function userPreference(e) {
+            if (e.matches) {
+                bodyElement.classList.add("dark");
+                return "dark"
+            } else {
+                bodyElement.classList.remove("dark");
+                return ""
+            }
+        }
+
+        darkModeMql.addListener(userPreference);
+
+        function themeSwitcher(e) {
+            if (e.target.checked) {
+                bodyElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                bodyElement.classList.remove('dark');
+                localStorage.setItem('theme', '');
+            }
+        }
+
+        themeToggle.addEventListener('change', themeSwitcher);
+    </script>
+    <!--theme switcher dark and light mode script//-->
+
+
+
+    @Html.Action("PartialSlider")
+    @Html.Action("PartialBooking")
+
+    @Html.Action("PartialFeature")
+
+    @Html.Action("PartialDestinations")
+    @Html.Action("PartialAbout")
+    @Html.Action("PartialBookingCover")
+    @Html.Action("PartialFooter")
+
+
+
+
+
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-chevron-up"></span>
+    </button>
+    @Html.Action("PartialMainScript")
+    <!-- /move top -->
+
+</body>
+
+</html>

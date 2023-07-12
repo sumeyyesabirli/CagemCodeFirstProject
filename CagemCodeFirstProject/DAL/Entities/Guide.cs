@@ -11,6 +11,7 @@ namespace CagemCodeFirstProject.DAL.Entities
         public string GuideName { get; set; }
         public string GuideTitle { get; set;}
         public string GuideImageUrl { get; set;}
+        public List<SocialMedia> SocialMedia { get; set; }
     }
     
 }
