@@ -1,9 +1,48 @@
 ﻿@{
     Layout = null;
 }
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<div class="container">
-    <br /><br />
-    <h1>Kayıp mı oldun, Ana Sayfaya Dönebilirsin</h1>
-    <a href="/Default/Index/" class="btn btn-info">Ana Sayfa</a>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>404 - Sayfa Bulunamadı</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(10px);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #e85a4f;
+            font-size: 48px;
+            margin-top: 50px;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .link {
+            color: #e85a4f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .link:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+<body>
+    <h1>404 - Sayfa Bulunamadı</h1>
+    <p>Özür dileriz, aradığınız sayfayı bulamadık.</p>
+    <a href="/Default/Index/">Ana sayfaya dönmek için buraya tıklayın</a>
+</body>
+</html>
