@@ -11,5 +11,6 @@ namespace CagemCodeFirstProject.DAL.Context
         public DbSet<Guide> Guides { get; set; }
         public DbSet<SocialMedia> SocialMedias{ get; set; }
         public DbSet<Admin> Adimins{ get; set; }
+        public DbSet<User> Users{ get; set; }
     }
 }

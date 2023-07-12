@@ -134,6 +134,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SocaialMediaController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DAL\Context\TravelContext.cs" />
     <Compile Include="DAL\Entities\Admin.cs" />
     <Compile Include="DAL\Entities\Booking.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="DAL\Entities\Destination.cs" />
     <Compile Include="DAL\Entities\Guide.cs" />
     <Compile Include="DAL\Entities\SocialMedia.cs" />
+    <Compile Include="DAL\Entities\User.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -151,6 +153,10 @@
     <Compile Include="Migrations\202307121159472_mig_add_admin_entity.cs" />
     <Compile Include="Migrations\202307121159472_mig_add_admin_entity.designer.cs">
       <DependentUpon>202307121159472_mig_add_admin_entity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307121815322_mig_add_user_entity.cs" />
+    <Compile Include="Migrations\202307121815322_mig_add_user_entity.designer.cs">
+      <DependentUpon>202307121815322_mig_add_user_entity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -231,6 +237,9 @@
     <Content Include="Template\go-trip-starter\index.html" />
     <Content Include="Template\go-trip-starter\services.html" />
     <Content Include="Template\go-trip-starter\starter-license-W3Layouts.txt" />
+    <Content Include="Template\login-page-in-html-with-css-code\index.html" />
+    <Content Include="Template\login-page-in-html-with-css-code\info.txt" />
+    <Content Include="Template\login-page-in-html-with-css-code\style.css" />
     <Content Include="Template\Report-Login-Free\css\font-awesome.min.css" />
     <Content Include="Template\Report-Login-Free\css\style.css" />
     <Content Include="Template\Report-Login-Free\fonts\fontawesome-webfont.svg" />
@@ -393,6 +402,8 @@
     <Content Include="Views\ErrorPage\Page404.cshtml" />
     <Content Include="Views\SocaialMedia\Index.cshtml" />
     <Content Include="Views\SocaialMedia\AddSocialMedia.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Template\login-page-in-html-with-css-code\Codehim - Free Web Design Code &amp; Scripts.url" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -431,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307121159472_mig_add_admin_entity.resx">
       <DependentUpon>202307121159472_mig_add_admin_entity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307121815322_mig_add_user_entity.resx">
+      <DependentUpon>202307121815322_mig_add_user_entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
