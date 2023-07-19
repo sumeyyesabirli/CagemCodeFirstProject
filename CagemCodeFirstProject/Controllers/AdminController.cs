@@ -5,7 +5,7 @@ namespace CagemCodeFirstProject.Controllers
 {
     public class AdminController : Controller
     {
-        TravelContext travelContext = new TravelContext();
+        // GET: Admin
         public ActionResult Index()
         {
             return View();

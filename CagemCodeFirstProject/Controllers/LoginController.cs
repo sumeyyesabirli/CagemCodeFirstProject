@@ -12,6 +12,7 @@ namespace CagemCodeFirstProject.Controllers
     public class LoginController : Controller
     {
         TravelContext travelContext = new TravelContext();
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -21,13 +22,15 @@ namespace CagemCodeFirstProject.Controllers
         [HttpPost]
         public ActionResult Index(Admin admin)
         {
-            var values = travelContext.Adimins.FirstOrDefault(x => x.Username == admin.Username && x.Password == admin.Password);
+            var values = travelContext.Admins.FirstOrDefault(x => x.Username == admin.Username
+            && x.Password == admin.Password);
+
 
             if (values != null)
             {
                 FormsAuthentication.SetAuthCookie(values.Username, false);
                 Session["usertravel"] = values.Username.ToString();
-                return RedirectToAction("Index", "AdminGuide");
+                return RedirectToAction("Index", "AdminHome");
             }
             else
             {

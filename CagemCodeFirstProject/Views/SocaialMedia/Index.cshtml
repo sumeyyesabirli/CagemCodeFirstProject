@@ -1,12 +1,11 @@
 ﻿@model List<CagemCodeFirstProject.DAL.Entities.SocialMedia>
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Admin/Index.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int count = 0;
 }
 
 <h2>Sosyal Medya</h2>
-
 <table class="table table-bordered">
     <tr>
         <th>#</th>
@@ -25,4 +24,3 @@
         </tr>
     }
 </table>
-

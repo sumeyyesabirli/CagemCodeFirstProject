@@ -1,6 +1,8 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
+
 
 <!--
    Author: W3layouts
@@ -8,86 +10,59 @@
 -->
 <!doctype html>
 <html lang="en">
-@Html.Action("PartialHead")
+@Html.Partial("PartialHead")
 <body id="home">
     @Html.Action("PartialNavbar")
-    @Html.Action("PartialSliderScript")
 
-    <!--//MENU-JS-->
-    <!-- disable body scroll which navbar is in active -->
-    <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
-    <!-- disable body scroll which navbar is in active -->
-    <!--theme switcher dark and light mode script-->
-    <script>
-        const bodyElement = document.querySelector('body');
-        const themeToggle = document.querySelector('#themeToggle');
-        const darkModeMql = window.matchMedia('(prefers-color-scheme: dark)');
-
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : userPreference(darkModeMql);
-
-        if (currentTheme) {
-            bodyElement.classList.add(currentTheme);
-
-            if (currentTheme === 'dark') {
-                themeToggle.checked = true;
-            }
-        }
-
-        function userPreference(e) {
-            if (e.matches) {
-                bodyElement.classList.add("dark");
-                return "dark"
-            } else {
-                bodyElement.classList.remove("dark");
-                return ""
-            }
-        }
-
-        darkModeMql.addListener(userPreference);
-
-        function themeSwitcher(e) {
-            if (e.target.checked) {
-                bodyElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                bodyElement.classList.remove('dark');
-                localStorage.setItem('theme', '');
-            }
-        }
-
-        themeToggle.addEventListener('change', themeSwitcher);
-    </script>
-    <!--theme switcher dark and light mode script//-->
-
-
-
-    @Html.Action("PartialSlider")
-    @Html.Action("PartialBooking")
+    @Html.Action("PartialNavbarScript")
 
     @Html.Action("PartialFeature")
 
-    @Html.Action("PartialDestinations")
-    @Html.Action("PartialAbout")
-    @Html.Action("PartialBookingCover")
-    @Html.Action("PartialFooter")
+    @Html.Action("PartialHolidayPlan")
+
+    @Html.Action("PartialPlace")
+
+    @Html.Action("PartialDestination")
+
+    @Html.Action("PartialExplore")
+
+    @Html.Action("PartialBookTravel")
+
+
+
+
+    <section class="w3l-footer-29-main">
+        <div class="footer-29 py-5 ">
+            <div class="container">
+                <div class="grid-col-4 footer-top-29">
+                    <div class="footer-list-29 footer-1">
+                        @Html.Action("PartialFooter")
+                        @Html.Action("PartialSocialMedia")
+                    </div>
+
+                    @Html.Action("PartialCategory")
+
+
+                    @Html.Action("PartialGalery")
+
+                    @Html.Action("PartialTravelTrip")
+
+
+                </div>
+                <div class=" bottom-copies text-center">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
 
 
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        <span class="fa fa-chevron-up"></span>
-    </button>
-    @Html.Action("PartialMainScript")
-    <!-- /move top -->
+    @Html.Action("PartialScript")
 
 </body>
 
 </html>
+

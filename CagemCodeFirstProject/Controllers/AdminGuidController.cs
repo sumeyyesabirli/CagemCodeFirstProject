@@ -5,8 +5,8 @@ using System.Web.Mvc;
 
 namespace CagemCodeFirstProject.Controllers
 {
-    [Authorize]
-    public class AdminGuidController : Controller
+    
+    public class AdminGuideController : Controller
     {
         TravelContext travelContext = new TravelContext();
         public ActionResult Index()
@@ -20,13 +20,21 @@ namespace CagemCodeFirstProject.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public ActionResult AddGuide(Guide guide)
+        public ActionResult AddGuide(Guide p)
         {
-            travelContext.Guides.Add(guide);
+            travelContext.Guides.Add(p);
+
+            foreach (var socialMedia in p.SocialMedia)
+            {
+                travelContext.SocialMedias.Add(socialMedia);
+            }
+
             travelContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
         public ActionResult DeleteGuide(int id)
         {
             var value = travelContext.Guides.Find(id);
@@ -34,22 +42,30 @@ namespace CagemCodeFirstProject.Controllers
             travelContext.SaveChanges();
             return RedirectToAction("Index");
         }
+
         [HttpGet]
         public ActionResult UpdateGuide(int id)
         {
             var value = travelContext.Guides.Find(id);
+
             return View(value);
         }
 
         [HttpPost]
-        public ActionResult UpdateGuide(Guide guide)
+        public ActionResult UpdateGuide(Guide p)
         {
-            var value = travelContext.Guides.Find(guide.GuideId);
-            value.GuideName = guide.GuideName;
-            value.GuideTitle = guide.GuideTitle;
-            value.GuideImageUrl = guide.GuideImageUrl;
+            var value = travelContext.Guides.Find(p.GuideId);
+
+
+            value.GuideName = p.GuideName;
+            value.GuideTitle = p.GuideTitle;
+            value.GuideImageUrl = p.GuideImageUrl;
+            value.SocialMedia.Clear();
+            value.SocialMedia.AddRange(p.SocialMedia);
             travelContext.SaveChanges();
             return RedirectToAction("Index");
+
+
         }
     }
 

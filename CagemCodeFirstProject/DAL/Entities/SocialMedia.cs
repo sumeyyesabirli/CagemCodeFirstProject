@@ -11,6 +11,7 @@ namespace CagemCodeFirstProject.DAL.Entities
         public string SocialMedaiName { get; set; }
         public string SocialMedaiUrl { get; set; }
         public  int GuideId { get; set; }
+        public string Icon { get; set; }
         public virtual Guide Guide { get; set;}
     }
 }

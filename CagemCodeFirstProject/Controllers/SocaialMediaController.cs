@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace CagemCodeFirstProject.Controllers
 {
-    public class SocaialMediaController : Controller
+    public class SocialMediaController : Controller
     {
         TravelContext travelContext = new TravelContext();
         public ActionResult Index()
@@ -26,7 +26,6 @@ namespace CagemCodeFirstProject.Controllers
                                                Value = x.GuideId.ToString(),
                                                Text = x.GuideName
                                            }).ToList();
-            ViewBag.v = values;
             return View();
         }
     }
